@@ -8,7 +8,7 @@ const PokemonItem = ({ name, image, weight, isLoading, id }) => {
     <div className={styles.pokemonItem}>
       <div className="image">
         {!isLoading ? (
-          <Link href={`/product/${id}`}>
+          <Link href="/product/[id]" as={`/product/${id}`}>
             <img src={image} height="96" width="96" alt={name} />
           </Link>
         ) : (
@@ -22,7 +22,9 @@ const PokemonItem = ({ name, image, weight, isLoading, id }) => {
       </div>
       <div className="pokemon-detail">
         <h3>
-          <Link href={`/product/${id}`}>{name}</Link>
+          <Link href="/product/[id]" as={`/product/${id}`}>
+            {name}
+          </Link>
         </h3>
         <p>
           {!isLoading ? (
