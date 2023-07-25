@@ -11,18 +11,6 @@ const remotes = (isServer) => {
 };
 
 const nextConfig = {
-  serverRuntimeConfig: {
-    NEXT_PUBLIC_HOME_APP_ENDPOINT: process.env.NEXT_PUBLIC_HOME_APP_ENDPOINT,
-    NEXT_PUBLIC_SHELL_APP_ENDPOINT: process.env.NEXT_PUBLIC_SHELL_APP_ENDPOINT,
-    NEXT_PUBLIC_PRODUCT_APP_ENDPOINT:
-      process.env.NEXT_PUBLIC_PRODUCT_APP_ENDPOINT,
-  },
-  publicRuntimeConfig: {
-    NEXT_PUBLIC_HOME_APP_ENDPOINT: process.env.NEXT_PUBLIC_HOME_APP_ENDPOINT,
-    NEXT_PUBLIC_SHELL_APP_ENDPOINT: process.env.NEXT_PUBLIC_SHELL_APP_ENDPOINT,
-    NEXT_PUBLIC_PRODUCT_APP_ENDPOINT:
-      process.env.NEXT_PUBLIC_PRODUCT_APP_ENDPOINT,
-  },
   webpack(config, options) {
     config.plugins.push(
       new NextFederationPlugin({
